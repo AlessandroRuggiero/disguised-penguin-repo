@@ -15,8 +15,7 @@
     {
         "container": "ghcr.io/alessandroruggiero/disguised-penguin-repo/firebase:main",
         "configmounts": {
-            "config": "/root/.config/",
-            "cfgstore": "/root/.config/"
+            "config": "/root/.config/"
         }
     }
 }
