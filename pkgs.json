@@ -1,5 +1,8 @@
 {
     "bash": {
         "container": "bash:latest"
+    },
+    "claude": {
+        "container": "ghcr.io/alessandroruggiero/disguised-penguin-repo/claude:main"
     }
 }
