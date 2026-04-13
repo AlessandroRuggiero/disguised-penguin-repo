@@ -4,5 +4,9 @@
     },
     "claude": {
         "container": "ghcr.io/alessandroruggiero/disguised-penguin-repo/claude:main"
+    },
+    "firebase": 
+    {
+        "container": "ghcr.io/alessandroruggiero/disguised-penguin-repo/firebase:main"
     }
 }
