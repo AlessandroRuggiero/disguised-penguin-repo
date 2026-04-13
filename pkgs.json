@@ -1,6 +1,9 @@
 {
     "bash": {
-        "container": "bash:latest"
+        "container": "bash:latest",
+        "configmounts": {
+            "bashrc": "/home/bash/.bashrc"
+        }
     },
     "claude": {
         "container": "ghcr.io/alessandroruggiero/disguised-penguin-repo/claude:main"
