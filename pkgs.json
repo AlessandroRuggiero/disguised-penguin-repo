@@ -2,7 +2,7 @@
     "bash": {
         "container": "bash:latest",
         "configmounts": {
-            "bashuser": "/home/bash/"
+            "bashuser": "/home/root/"
         }
     },
     "claude": {
