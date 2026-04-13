@@ -16,6 +16,9 @@
         "container": "ghcr.io/alessandroruggiero/disguised-penguin-repo/firebase:main",
         "configmounts": {
             "config": "/root/.config/"
+        },
+        "portmappings": {
+            "9005": "9005"
         }
     }
 }
