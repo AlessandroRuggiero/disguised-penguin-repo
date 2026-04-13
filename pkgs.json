@@ -6,7 +6,10 @@
         }
     },
     "claude": {
-        "container": "ghcr.io/alessandroruggiero/disguised-penguin-repo/claude:main"
+        "container": "ghcr.io/alessandroruggiero/disguised-penguin-repo/claude:main",
+        "configmounts": {
+            "dotclaude": "/home/claude/.claude/"
+        }
     },
     "firebase": 
     {
