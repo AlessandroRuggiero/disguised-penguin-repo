@@ -15,7 +15,7 @@
     {
         "container": "ghcr.io/alessandroruggiero/disguised-penguin-repo/firebase:main",
         "configmounts": {
-            "config": "/home/fb/.config/firebase/"
+            "config": "/root/.config/firebase/"
         }
     }
 }
