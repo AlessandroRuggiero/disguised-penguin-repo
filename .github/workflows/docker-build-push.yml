@@ -10,7 +10,28 @@ env:
   REGISTRY: ghcr.io
 
 jobs:
+  detect-changes:
+    runs-on: ubuntu-latest
+    outputs:
+      images: ${{ steps.filter.outputs.changes }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Check for changed paths
+        uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            claude:
+              - 'build/claude/**'
+            firebase:
+              - 'build/firebase/**'
+            opencode:
+              - 'build/opencode/**'
+
   build-and-push:
+    needs: detect-changes
+    if: ${{ needs.detect-changes.outputs.images != '[]' && needs.detect-changes.outputs.images != '' }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -18,7 +39,7 @@ jobs:
     
     strategy:
       matrix:
-        image: [claude, firebase, opencode]
+        image: ${{ fromJSON(needs.detect-changes.outputs.images) }}
 
     steps:
       - name: Checkout repository
