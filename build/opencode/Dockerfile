@@ -1,9 +1,11 @@
 FROM node:20-slim
 
-# 1. Install gosu (changes rarely)
+# 1. Install gosu and create the 'penguin' user (changes rarely)
 RUN apt-get update && \
     apt-get install -y gosu && \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/* && \
+    # Create the penguin user with a home directory
+    useradd -m -s /bin/bash penguin
 
 # 2. Copy the entrypoint script (changes rarely)
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
