@@ -4,8 +4,9 @@ FROM node:20-slim
 RUN apt-get update && \
     apt-get install -y gosu && \
     rm -rf /var/lib/apt/lists/* && \
-    # Create the penguin user with a home directory
-    useradd -m -s /bin/bash penguin
+    # Rename the default 'node' user and group to 'penguin'
+    groupmod -n penguin node && \
+    usermod -l penguin -d /home/penguin -m node
 
 # 2. Copy the entrypoint script (changes rarely)
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
