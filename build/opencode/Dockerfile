@@ -19,5 +19,4 @@ RUN npm install -g opencode-ai@1.4.3
 WORKDIR /workspace
 
 # 4. Set the Entrypoint
-ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
-CMD ["opencode"]
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh", "opencode"]

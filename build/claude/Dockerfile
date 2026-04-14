@@ -16,5 +16,4 @@ RUN npm install -g @anthropic-ai/claude-code
 WORKDIR /workspace
 USER penguin
 
-ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
-CMD ["claude"]
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh", "claude"]
