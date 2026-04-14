@@ -24,10 +24,13 @@ jobs:
           filters: |
             claude:
               - 'build/claude/**'
+              - 'build/entrypoint.sh'
             firebase:
               - 'build/firebase/**'
+              - 'build/entrypoint.sh'
             opencode:
               - 'build/opencode/**'
+              - 'build/entrypoint.sh'
 
   build-and-push:
     needs: detect-changes
@@ -62,7 +65,8 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
-          context: ./build/${{ matrix.image }}
+          context: ./build
+          file: ./build/${{ matrix.image }}/Dockerfile
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}

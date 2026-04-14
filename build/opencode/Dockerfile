@@ -1,6 +1,6 @@
 FROM node:20-slim
 
-# 1. Install gosu and create the 'penguin' user (changes rarely)
+# 1. Install gosu and create the 'penguin' user
 RUN apt-get update && \
     apt-get install -y gosu && \
     rm -rf /var/lib/apt/lists/* && \
@@ -8,7 +8,7 @@ RUN apt-get update && \
     groupmod -n penguin node && \
     usermod -l penguin -d /home/penguin -m node
 
-# 2. Copy the entrypoint script (changes rarely)
+# 2. Copy the entrypoint script
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
