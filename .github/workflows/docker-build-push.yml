@@ -18,7 +18,7 @@ jobs:
     
     strategy:
       matrix:
-        image: [claude, firebase]
+        image: [claude, firebase, opencode]
 
     steps:
       - name: Checkout repository
