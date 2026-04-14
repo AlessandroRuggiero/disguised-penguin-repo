@@ -15,6 +15,8 @@ RUN chmod +x /usr/local/bin/entrypoint.sh
 # Specify the exact version here instead of @latest
 RUN npm install -g opencode-ai@1.4.3
 
+USER penguin
+
 WORKDIR /workspace
 
 # 4. Set the Entrypoint

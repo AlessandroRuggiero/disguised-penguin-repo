@@ -24,7 +24,7 @@
     "opencode": {
         "container": "ghcr.io/alessandroruggiero/disguised-penguin-repo/opencode:main",
         "configmounts": {
-            "opencodeconfig": "/root/.local/share/opencode/"
+            "opencodeconfig": "/home/penguin/.local/share/opencode/"
         }
     }
 }
