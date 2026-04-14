@@ -15,5 +15,4 @@ RUN npm install -g firebase-tools
 
 WORKDIR /workspace
 
-ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
-CMD ["firebase"]
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh", "firebase"]
