@@ -8,14 +8,14 @@
     "claude": {
         "container": "ghcr.io/alessandroruggiero/disguised-penguin-repo/claude:main",
         "configmounts": {
-            "dotclaude": "/home/claude/.claude/"
+            "dotclaude": "/home/penguin/.claude/"
         }
     },
     "firebase": 
     {
         "container": "ghcr.io/alessandroruggiero/disguised-penguin-repo/firebase:main",
         "configmounts": {
-            "config": "/root/.config/"
+            "config": "/home/penguin/.config/"
         },
         "portmappings": {
             "9005": "9005"
