@@ -31,6 +31,9 @@ jobs:
             opencode:
               - 'build/opencode/**'
               - 'build/entrypoint.sh'
+            gcloud:
+              - 'build/gcloud/**'
+              - 'build/entrypoint.sh'
 
   build-and-push:
     needs: detect-changes

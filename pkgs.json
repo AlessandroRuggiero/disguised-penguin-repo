@@ -26,5 +26,11 @@
         "configmounts": {
             "opencodeconfig": "/home/penguin/.local/share/opencode/"
         }
+    },
+    "gcloud": {
+        "container": "ghcr.io/alessandroruggiero/disguised-penguin-repo/gcloud:main",
+        "configmounts": {
+            "gcloudconfig": "/home/penguin/.config/gcloud/"
+        }
     }
 }
