@@ -32,5 +32,11 @@
         "configmounts": {
             "gcloudconfig": "/home/penguin/.config/gcloud/"
         }
+    },
+    "doctl": {
+        "container": "ghcr.io/alessandroruggiero/disguised-penguin-repo/doctl:main",
+        "configmounts": {
+            "doctlconfig": "/home/penguin/.config/doctl/"
+        }
     }
 }

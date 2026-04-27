@@ -34,6 +34,9 @@ jobs:
             gcloud:
               - 'build/gcloud/**'
               - 'build/entrypoint.sh'
+            doctl:
+              - 'build/doctl/**'
+              - 'build/entrypoint.sh'
 
   build-and-push:
     needs: detect-changes
