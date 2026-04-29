@@ -37,6 +37,9 @@ jobs:
             doctl:
               - 'build/doctl/**'
               - 'build/entrypoint.sh'
+            flutter:
+              - 'build/flutter/**'
+              - 'build/entrypoint.sh'
 
   build-and-push:
     needs: detect-changes
