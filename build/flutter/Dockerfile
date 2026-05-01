@@ -7,12 +7,11 @@ ENV PATH="$PATH:/opt/flutter/bin:/opt/android-sdk/cmdline-tools/latest/bin:/opt/
 
 RUN apt-get update && \
 	apt-get install -y --no-install-recommends \
-		curl unzip xz-utils zip libglu1-mesa openjdk-17-jdk git gosu && \
-	rm -rf /var/lib/apt/lists/* && \
-	groupadd penguin && \
-	useradd -m -g penguin -s /bin/bash penguin
+                curl unzip xz-utils zip libglu1-mesa openjdk-17-jdk git && \
+        rm -rf /var/lib/apt/lists/*
 
-# Install Flutter
+COPY setup-penguin.sh /usr/local/bin/setup-penguin.sh
+RUN /usr/local/bin/setup-penguin.sh
 RUN git clone https://github.com/flutter/flutter.git -b stable --depth 1 "$FLUTTER_HOME" && \
 	chown -R penguin:penguin /opt/flutter
 

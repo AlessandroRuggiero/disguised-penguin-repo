@@ -3,12 +3,8 @@ FROM digitalocean/doctl:latest AS doctl
 FROM debian:bookworm-slim
 
 # 1. Install gosu and create the 'penguin' user
-RUN apt-get update && \
-    apt-get install -y gosu && \
-    rm -rf /var/lib/apt/lists/* && \
-    # Create a new 'penguin' user and group
-    groupadd penguin && \
-    useradd -m -g penguin -s /bin/bash penguin
+COPY setup-penguin.sh /usr/local/bin/setup-penguin.sh
+RUN /usr/local/bin/setup-penguin.sh
 
 # 2. Pre-create the config directory used by doctl
 RUN mkdir -p /home/penguin/.config && \
