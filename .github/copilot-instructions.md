@@ -15,7 +15,7 @@ When tasked with adding a new tool to this repository, follow these steps:
      ```
    - Rely on `entrypoint.sh` for flexible UID/PGID mapping at runtime. Include it at the end of the Dockerfile.
 3. **Update `pkgs.json`**: Add an entry for the new tool in `pkgs.json`.
-   - Use the image format `"container": "ghcr.io/alessandroruggiero/disguised-penguin-repo/<tool-name>:main"`.
+   - Use the image format `"container": "ghcr.io/<your-username>/<repo-name>/<tool-name>:main"`.
    - Specify necessary `"configmounts"` (e.g. for user configuration directories to persist authentication and settings).
    - Specify `"portmappings"` if the tool runs a local server that needs ports exposed to the host.
 
