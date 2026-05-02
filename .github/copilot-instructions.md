@@ -20,6 +20,7 @@ When tasked with adding a new tool to this repository, follow these steps:
    - Specify necessary `"configmounts"` (e.g. for user configuration directories to persist authentication and settings).
    - Specify `"portmappings"` if the tool runs a local server that needs ports exposed to the host.
 4. **Update docker-build-push.yml**: Add to the list of filters in the GitHub Actions workflow to trigger builds for the new tool when relevant files change.
+5. Update the `README.md` to include the name of the new tool
 
 ## General AI guidelines
 - Ensure JSON files (`pkgs.json`, `info.json`) are valid and properly formatted.

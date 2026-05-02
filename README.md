@@ -10,6 +10,7 @@ Everything is automatically built and published on the GitHub container registry
 - `firebase`
 - `gcloud`
 - `opencode`
+- `gemini`
 
 ## Structure
 - `build/<tool-name>/Dockerfile`: Dockerfiles for each tool.
