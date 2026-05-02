@@ -25,21 +25,31 @@ jobs:
             claude:
               - 'build/claude/**'
               - 'build/entrypoint.sh'
+              - 'build/setup-penguin.sh'
             firebase:
               - 'build/firebase/**'
               - 'build/entrypoint.sh'
+              - 'build/setup-penguin.sh'
             opencode:
               - 'build/opencode/**'
               - 'build/entrypoint.sh'
+              - 'build/setup-penguin.sh'
             gcloud:
               - 'build/gcloud/**'
               - 'build/entrypoint.sh'
+              - 'build/setup-penguin.sh'
             doctl:
               - 'build/doctl/**'
               - 'build/entrypoint.sh'
+              - 'build/setup-penguin.sh'
             flutter:
               - 'build/flutter/**'
               - 'build/entrypoint.sh'
+              - 'build/setup-penguin.sh'
+            gemini:
+              - 'build/gemini/**'
+              - 'build/entrypoint.sh'
+              - 'build/setup-penguin.sh'
 
   build-and-push:
     needs: detect-changes

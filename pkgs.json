@@ -38,5 +38,11 @@
         "configmounts": {
             "doctlconfig": "/home/penguin/.config/doctl/"
         }
+    },
+    "gemini": {
+        "container": "ghcr.io/alessandroruggiero/disguised-penguin-repo/gemini:main",
+        "configmounts": {
+            "geminiconfig": "/home/penguin/.gemini/"
+        }
     }
 }
