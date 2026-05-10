@@ -1,4 +1,4 @@
-FROM node:20-slim
+FROM node:26-slim
 
 COPY setup-penguin.sh /usr/local/bin/setup-penguin.sh
 RUN /usr/local/bin/setup-penguin.sh node
