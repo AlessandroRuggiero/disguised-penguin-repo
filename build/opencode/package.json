@@ -1,0 +1,7 @@
+{
+  "name": "disguised-penguin-opencode",
+  "private": true,
+  "dependencies": {
+    "opencode-ai": "1.14.33"
+  }
+}

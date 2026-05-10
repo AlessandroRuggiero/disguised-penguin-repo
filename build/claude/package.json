@@ -1,0 +1,7 @@
+{
+  "name": "disguised-penguin-claude",
+  "private": true,
+  "dependencies": {
+    "@anthropic-ai/claude-code": "2.1"
+  }
+}
