@@ -1,4 +1,4 @@
-FROM node:20-slim
+FROM node:26-slim
 
 # 1. Install gosu and create the 'penguin' user
 COPY setup-penguin.sh /usr/local/bin/setup-penguin.sh
