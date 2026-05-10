@@ -23,3 +23,19 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+  
+  - package-ecosystem: "npm"
+    directories:
+      - "/build/claude"
+      - "/build/doctl"
+      - "/build/firebase"
+      - "/build/flutter"
+      - "/build/gcloud"
+      - "/build/gemini"
+      - "/build/opencode"
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 20
+    labels:
+      - "dependencies"
+      - "npm"

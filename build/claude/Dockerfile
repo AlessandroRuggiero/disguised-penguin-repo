@@ -17,8 +17,11 @@ RUN mkdir -p /home/penguin/.claude && \
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
+COPY install-npm-global-from-package-json.sh /usr/local/bin/install-npm-global-from-package-json.sh
+
 # 4. Install Claude Code
-RUN npm install -g @anthropic-ai/claude-code@2.1
+COPY claude/package.json /tmp/deps/package.json
+RUN sh /usr/local/bin/install-npm-global-from-package-json.sh @anthropic-ai/claude-code /tmp/deps --cleanup
 
 WORKDIR /workspace
 

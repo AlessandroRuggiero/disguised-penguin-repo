@@ -15,9 +15,12 @@ RUN mkdir -p /home/penguin/.config && \
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
+COPY install-npm-global-from-package-json.sh /usr/local/bin/install-npm-global-from-package-json.sh
+
 # 3. Install the CLI tool (changes frequently when you bump the version)
 # Specify the exact version here instead of @latest
-RUN npm install -g opencode-ai@1.14.33
+COPY opencode/package.json /tmp/deps/package.json
+RUN sh /usr/local/bin/install-npm-global-from-package-json.sh opencode-ai /tmp/deps --cleanup
 
 WORKDIR /workspace
 

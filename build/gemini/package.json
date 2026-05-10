@@ -1,0 +1,7 @@
+{
+  "name": "disguised-penguin-gemini",
+  "private": true,
+  "dependencies": {
+    "@google/gemini-cli": "0.40.1"
+  }
+}
