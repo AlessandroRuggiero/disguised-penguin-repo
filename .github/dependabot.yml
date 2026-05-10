@@ -1,0 +1,25 @@
+version: 2
+
+updates:
+  - package-ecosystem: "docker"
+    directories:
+      - "/build/claude"
+      - "/build/doctl"
+      - "/build/firebase"
+      - "/build/flutter"
+      - "/build/gcloud"
+      - "/build/gemini"
+      - "/build/opencode"
+    schedule:
+      interval: "daily"
+
+    open-pull-requests-limit: 20
+
+    labels:
+      - "dependencies"
+      - "docker"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
