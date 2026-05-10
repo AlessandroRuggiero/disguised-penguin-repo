@@ -17,7 +17,7 @@ RUN chmod +x /usr/local/bin/entrypoint.sh
 
 # 3. Install the CLI tool (changes frequently when you bump the version)
 # Specify the exact version here instead of @latest
-RUN npm install -g opencode-ai@1.4.3
+RUN npm install -g opencode-ai@1.14.33
 
 WORKDIR /workspace
 
