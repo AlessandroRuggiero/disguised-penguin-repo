@@ -1,4 +1,4 @@
-FROM node:20-slim
+FROM node:26-slim
 
 ENV NO_UPDATE_NOTIFIER=1
 
