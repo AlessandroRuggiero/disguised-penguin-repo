@@ -11,6 +11,7 @@ Everything is automatically built and published on the GitHub container registry
 - `gcloud`
 - `opencode`
 - `gemini`
+- `gh`
 
 ## Structure
 - `build/<tool-name>/Dockerfile`: Dockerfiles for each tool.

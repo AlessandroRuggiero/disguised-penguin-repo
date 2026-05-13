@@ -50,6 +50,10 @@ jobs:
               - 'build/gemini/**'
               - 'build/entrypoint.sh'
               - 'build/setup-penguin.sh'
+            gh:
+              - 'build/gh/**'
+              - 'build/entrypoint.sh'
+              - 'build/setup-penguin.sh'
 
   build-and-push:
     needs: detect-changes

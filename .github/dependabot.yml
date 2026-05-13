@@ -9,6 +9,7 @@ updates:
       - "/build/flutter"
       - "/build/gcloud"
       - "/build/gemini"
+      - "/build/gh"
       - "/build/opencode"
     schedule:
       interval: "daily"

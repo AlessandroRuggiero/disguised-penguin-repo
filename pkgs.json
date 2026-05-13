@@ -44,5 +44,11 @@
         "configmounts": {
             "geminiconfig": "/home/penguin/.gemini/"
         }
+    },
+    "gh": {
+        "container": "ghcr.io/alessandroruggiero/disguised-penguin-repo/gh:main",
+        "configmounts": {
+            "ghconfig": "/home/penguin/.config/gh/"
+        }
     }
 }
