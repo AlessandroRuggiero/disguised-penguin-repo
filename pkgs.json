@@ -9,7 +9,7 @@
         "container": "ghcr.io/alessandroruggiero/disguised-penguin-repo/claude:main",
         "configmounts": {
             "dotclaude": "/home/penguin/.claude/",
-            "claudejson": "/home/penguin/.claude.json"
+            "claudehome": "/home/penguin/"
         }
     },
     "firebase": 
