@@ -2,6 +2,6 @@
   "name": "disguised-penguin-firebase",
   "private": true,
   "dependencies": {
-    "firebase-tools": "15.19"
+    "firebase-tools": "15.21"
   }
 }
