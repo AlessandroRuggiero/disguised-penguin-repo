@@ -2,6 +2,6 @@
   "name": "disguised-penguin-opencode",
   "private": true,
   "dependencies": {
-    "opencode-ai": "1.16.2"
+    "opencode-ai": "1.17.9"
   }
 }
