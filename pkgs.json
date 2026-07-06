@@ -52,4 +52,11 @@
             "ghconfig": "/home/penguin/.config/gh/"
         }
     }
+    ,
+    "yt-dlp": {
+        "container": "ghcr.io/alessandroruggiero/disguised-penguin-repo/yt-dlp:main",
+        "configmounts": {
+            "yt-dlp-config": "/home/penguin/.config/yt-dlp/"
+        }
+    }
 }

@@ -54,6 +54,10 @@ jobs:
               - 'build/gh/**'
               - 'build/entrypoint.sh'
               - 'build/setup-penguin.sh'
+            yt-dlp:
+              - 'build/yt-dlp/**'
+              - 'build/entrypoint.sh'
+              - 'build/setup-penguin.sh'
 
   build-and-push:
     needs: detect-changes
