@@ -1,6 +1,7 @@
 FROM node:26-slim
 
 ENV NO_UPDATE_NOTIFIER=1
+ENV DISABLE_AUTOUPDATER=1
 
 # 1. Install gosu and create the 'penguin' user
 COPY setup-penguin.sh /usr/local/bin/setup-penguin.sh
