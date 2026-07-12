@@ -14,6 +14,7 @@ Everything is automatically built and published on the GitHub container registry
 - `gh`
 - `yt-dlp`
 - `flutter`
+- `codex`
 
 ## Structure
 - `build/<tool-name>/Dockerfile`: Dockerfiles for each tool.

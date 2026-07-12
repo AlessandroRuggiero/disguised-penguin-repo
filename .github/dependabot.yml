@@ -4,6 +4,7 @@ updates:
   - package-ecosystem: "docker"
     directories:
       - "/build/claude"
+      - "/build/codex"
       - "/build/doctl"
       - "/build/firebase"
       - "/build/flutter"
@@ -29,6 +30,7 @@ updates:
   - package-ecosystem: "npm"
     directories:
       - "/build/claude"
+      - "/build/codex"
       - "/build/doctl"
       - "/build/firebase"
       - "/build/gcloud"

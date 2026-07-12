@@ -65,5 +65,11 @@
             "flutterconfig": "/home/penguin/.config/flutter/",
             "androidconfig": "/home/penguin/.android/"
         }
+    },
+    "codex": {
+        "container": "ghcr.io/alessandroruggiero/disguised-penguin-repo/codex:main",
+        "configmounts": {
+            "codexconfig": "/home/penguin/.codex/"
+        }
     }
 }

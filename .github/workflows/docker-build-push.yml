@@ -58,6 +58,10 @@ jobs:
               - 'build/yt-dlp/**'
               - 'build/entrypoint.sh'
               - 'build/setup-penguin.sh'
+            codex:
+              - 'build/codex/**'
+              - 'build/entrypoint.sh'
+              - 'build/setup-penguin.sh'
 
   build-and-push:
     needs: detect-changes
