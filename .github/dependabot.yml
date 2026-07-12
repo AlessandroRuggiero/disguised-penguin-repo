@@ -11,6 +11,7 @@ updates:
       - "/build/gemini"
       - "/build/gh"
       - "/build/opencode"
+      - "/build/yt-dlp"
     schedule:
       interval: "daily"
 

@@ -1,4 +1,4 @@
-FROM debian:stable-slim
+FROM debian:13-slim
 
 # Install Python, pip and ffmpeg for media processing
 RUN apt-get update && apt-get install -y \
