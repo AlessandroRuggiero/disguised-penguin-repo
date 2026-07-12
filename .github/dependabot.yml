@@ -31,7 +31,6 @@ updates:
       - "/build/claude"
       - "/build/doctl"
       - "/build/firebase"
-      - "/build/flutter"
       - "/build/gcloud"
       - "/build/gemini"
       - "/build/opencode"

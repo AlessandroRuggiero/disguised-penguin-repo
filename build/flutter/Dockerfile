@@ -6,9 +6,9 @@ ENV FLUTTER_HOME=/opt/flutter
 ENV PATH="$PATH:/opt/flutter/bin:/opt/android-sdk/cmdline-tools/latest/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/emulator"
 
 RUN apt-get update && \
-	apt-get install -y --no-install-recommends \
-                curl unzip xz-utils zip libglu1-mesa openjdk-17-jdk git && \
-        rm -rf /var/lib/apt/lists/*
+    apt-get install -y --no-install-recommends \
+        curl unzip xz-utils zip libglu1-mesa openjdk-17-jdk git && \
+    rm -rf /var/lib/apt/lists/*
 
 COPY setup-penguin.sh /usr/local/bin/setup-penguin.sh
 RUN /usr/local/bin/setup-penguin.sh
@@ -38,7 +38,7 @@ RUN yes | "$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager" --sdk_root="$A
 	"$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager" --sdk_root="$ANDROID_SDK_ROOT" \
 		"platform-tools" "platforms;android-34" "build-tools;34.0.0" "emulator"
 
-COPY ../entrypoint.sh /usr/local/bin/entrypoint.sh
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
 WORKDIR /workspace

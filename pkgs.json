@@ -57,5 +57,13 @@
         "configmounts": {
             "yt-dlp-config": "/home/penguin/.config/yt-dlp/"
         }
+    },
+    "flutter": {
+        "container": "ghcr.io/alessandroruggiero/disguised-penguin-repo/flutter:main",
+        "configmounts": {
+            "pubcache": "/home/penguin/.pub-cache/",
+            "flutterconfig": "/home/penguin/.config/flutter/",
+            "androidconfig": "/home/penguin/.android/"
+        }
     }
 }
