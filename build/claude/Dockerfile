@@ -3,6 +3,10 @@ FROM node:26-slim
 ENV NO_UPDATE_NOTIFIER=1
 ENV DISABLE_AUTOUPDATER=1
 
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends git less && \
+    rm -rf /var/lib/apt/lists/*
+
 # 1. Install gosu and create the 'penguin' user
 COPY setup-penguin.sh /usr/local/bin/setup-penguin.sh
 RUN /usr/local/bin/setup-penguin.sh node
