@@ -2,6 +2,6 @@
   "name": "disguised-penguin-codex",
   "private": true,
   "dependencies": {
-    "@openai/codex": "0.144.3"
+    "@openai/codex": "0.144.4"
   }
 }
