@@ -1,8 +1,8 @@
 {
     "bash": {
-        "container": "bash:latest",
+        "container": "ghcr.io/alessandroruggiero/disguised-penguin-repo/bash:main",
         "configmounts": {
-            "bashuser": "/root/"
+            "bashhome": "/home/penguin/"
         }
     },
     "claude": {

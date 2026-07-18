@@ -22,6 +22,10 @@ jobs:
         id: filter
         with:
           filters: |
+            bash:
+              - 'build/bash/**'
+              - 'build/entrypoint.sh'
+              - 'build/setup-penguin.sh'
             claude:
               - 'build/claude/**'
               - 'build/entrypoint.sh'
