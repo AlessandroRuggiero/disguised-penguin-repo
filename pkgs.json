@@ -71,5 +71,17 @@
         "configmounts": {
             "codexconfig": "/home/penguin/.codex/"
         }
+    },
+    "aws": {
+        "container": "ghcr.io/alessandroruggiero/disguised-penguin-repo/aws:main",
+        "configmounts": {
+            "awsconfig": "/home/penguin/.aws/"
+        }
+    },
+    "kubectl": {
+        "container": "ghcr.io/alessandroruggiero/disguised-penguin-repo/kubectl:main",
+        "configmounts": {
+            "kubeconfig": "/home/penguin/.kube/"
+        }
     }
 }
