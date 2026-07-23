@@ -10,7 +10,7 @@
         "configmounts": {
             "dot_claude" : "/home/penguin/.claude/",
             "dot_claude_file": {
-                "path": "/home/penguin/.claude",
+                "path": "/home/penguin/.claude.json",
                 "type": "file"
             }
         }
