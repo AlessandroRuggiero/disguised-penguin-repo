@@ -1,4 +1,4 @@
-FROM gcr.io/google.com/cloudsdktool/google-cloud-cli:578.0.0-slim
+FROM gcr.io/google.com/cloudsdktool/google-cloud-cli:580.0.0-slim
 
 COPY setup-penguin.sh /usr/local/bin/setup-penguin.sh
 RUN /usr/local/bin/setup-penguin.sh
