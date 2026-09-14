@@ -115,3 +115,28 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           no-cache: true
           platforms: linux/amd64
+
+  # Single stable status check that aggregates the dynamic build matrix, so it
+  # can be used as a required check in branch protection (matrix job names vary
+  # with the set of changed images, and are skipped entirely when none changed).
+  ci:
+    needs: [detect-changes, build-and-push]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check results
+        env:
+          DETECT_RESULT: ${{ needs.detect-changes.result }}
+          BUILD_RESULT: ${{ needs.build-and-push.result }}
+        run: |
+          echo "detect-changes: $DETECT_RESULT"
+          echo "build-and-push: $BUILD_RESULT"
+          if [ "$DETECT_RESULT" != "success" ]; then
+            echo "::error::Change detection did not succeed"
+            exit 1
+          fi
+          # "skipped" is valid: no image directories were touched by this PR.
+          if [ "$BUILD_RESULT" != "success" ] && [ "$BUILD_RESULT" != "skipped" ]; then
+            echo "::error::Image build did not succeed"
+            exit 1
+          fi

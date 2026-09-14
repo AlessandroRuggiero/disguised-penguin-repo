@@ -1,0 +1,28 @@
+name: Dependabot auto-merge
+
+on: pull_request
+
+# Dependabot-triggered workflows get a read-only token by default; these
+# explicit permissions are what allow the job to enable auto-merge.
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  auto-merge:
+    if: github.event.pull_request.user.login == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch Dependabot metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      # Does not merge immediately: GitHub merges the PR only once the required
+      # status checks pass. If CI fails the PR just stays open.
+      - name: Enable auto-merge
+        run: gh pr merge --auto --squash "$PR_URL"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
