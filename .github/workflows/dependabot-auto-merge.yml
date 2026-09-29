@@ -22,7 +22,7 @@ jobs:
       # Does not merge immediately: GitHub merges the PR only once the required
       # status checks pass. If CI fails the PR just stays open.
       - name: Enable auto-merge
-        run: gh pr merge --auto --squash "$PR_URL"
+        run: gh pr merge --auto --merge "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
           # Not GITHUB_TOKEN: a merge made with it fires no workflows, so the
