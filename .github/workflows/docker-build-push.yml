@@ -74,6 +74,10 @@ jobs:
               - 'build/kubectl/**'
               - 'build/entrypoint.sh'
               - 'build/setup-penguin.sh'
+            lazygit:
+              - 'build/lazygit/**'
+              - 'build/entrypoint.sh'
+              - 'build/setup-penguin.sh'
 
   build-and-push:
     needs: detect-changes

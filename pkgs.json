@@ -87,5 +87,14 @@
         "configmounts": {
             "kubeconfig": "/home/penguin/.kube/"
         }
+    },
+    "lazygit": {
+        "container": "ghcr.io/alessandroruggiero/disguised-penguin-repo/lazygit:main",
+        "configmounts": {
+            "lazygitconfig": "/home/penguin/.config/lazygit/",
+            "lazygitstate": "/home/penguin/.local/state/lazygit/",
+            "gitconfig": "/home/penguin/.config/git/",
+            "ssh": "/home/penguin/.ssh/"
+        }
     }
 }

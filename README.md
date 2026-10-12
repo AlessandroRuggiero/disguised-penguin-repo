@@ -17,6 +17,7 @@ Everything is automatically built and published on the GitHub container registry
 - `codex`
 - `aws`
 - `kubectl`
+- `lazygit`
 
 ## Structure
 - `build/<tool-name>/Dockerfile`: Dockerfiles for each tool.
