@@ -1,18 +1,22 @@
+FROM golang:1.27.2-trixie AS build
+
+# gh's version is pinned in go.mod so Dependabot (gomod) can bump it
+WORKDIR /src
+COPY gh/go.mod gh/go.sum ./
+RUN GH_VERSION="$(go list -m -f '{{.Version}}' github.com/cli/cli/v2)" \
+    && CGO_ENABLED=0 go build -trimpath \
+    -ldflags "-s -w -X github.com/cli/cli/v2/internal/build.Version=${GH_VERSION#v}" \
+    -o /out/gh github.com/cli/cli/v2/cmd/gh
+
 FROM debian:13-slim
 
-# Install dependencies and GitHub CLI
 RUN apt-get update && apt-get install -y \
-    curl \
-    gnupg \
+    ca-certificates \
     git \
-    && mkdir -p -m 755 /etc/apt/keyrings \
-    && curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
-    && chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \
-    && echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
-    && apt-get update \
-    && apt-get install -y gh \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
+
+COPY --from=build /out/gh /usr/local/bin/gh
 
 COPY setup-penguin.sh /usr/local/bin/setup-penguin.sh
 RUN /usr/local/bin/setup-penguin.sh

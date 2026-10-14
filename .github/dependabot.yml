@@ -27,6 +27,18 @@ updates:
     schedule:
       interval: "daily"
   
+  - package-ecosystem: "gomod"
+    directory: "/build/gh"
+    schedule:
+      interval: "daily"
+    # Only gh itself, which go.mod marks "// indirect" because it's only a tool
+    allow:
+      - dependency-name: "github.com/cli/cli/v2"
+        dependency-type: "all"
+    labels:
+      - "dependencies"
+      - "go"
+
   - package-ecosystem: "npm"
     directories:
       - "/build/claude"
