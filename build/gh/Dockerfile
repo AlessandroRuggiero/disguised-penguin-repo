@@ -1,4 +1,4 @@
-FROM golang:1.27.2-trixie AS build
+FROM golang:1.27.3-trixie AS build
 
 # gh's version is pinned in go.mod so Dependabot (gomod) can bump it
 WORKDIR /src
