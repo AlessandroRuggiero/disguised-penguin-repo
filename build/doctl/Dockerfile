@@ -1,4 +1,4 @@
-FROM digitalocean/doctl:2.1.0 AS doctl
+FROM digitalocean/doctl:2.3.0 AS doctl
 
 FROM debian:bookworm-slim
 
